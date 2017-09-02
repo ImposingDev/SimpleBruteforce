@@ -26,7 +26,7 @@ namespace Bruteforce
             string chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!\"/\\.,-|+#*'§$%&()=?´<> ";
             string result = "";
             Console.ForegroundColor = ConsoleColor.Magenta;
-            Console.WriteLine("[+][+] Starting BruteForce...");
+            Console.WriteLine("[Start] Starting BruteForce...");
             for (int x = 0; x <= word.Length - 1; x++)
             {
                 foreach (char ch in chars)
