@@ -1,32 +1,32 @@
-﻿using System;
+using System;
 
 namespace Bruteforce
 {
     class Program
     {
- 
+           //Main
         static void Main(string[] args)
         {
-            //Set Title
+            //Display Title
             Console.Title = "Simple Local Bruteforce";
+            //Title colour
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
             Console.WriteLine("|--Write a word to bruteforce!--|");
-            //Start the Bruteforce
-            Console.WriteLine("[-Finished-] All chars found! - Password Found: {0}", BruteForcer());
+            //Choosing text colour
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("[-Finished-] All chars found! - Password Found: {0}",BruteForcer());
             for (int i = 0; i < 100; i++)
-            //for not automatically closing
             Console.ReadKey();
 
         }
         static string BruteForcer()
         {
-            //read the word
+            
             string word = Console.ReadLine();
-            //all chars
             string chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!\"/\\.,-|+#*'§$%&()=?´<> ";
             string result = "";
-            
-            Console.WriteLine("[WORKING] Starting BruteForce...");
-            //BRUTEFORCE
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.WriteLine("[+][+] Starting BruteForce...");
             for (int x = 0; x <= word.Length - 1; x++)
             {
                 foreach (char ch in chars)
@@ -34,22 +34,23 @@ namespace Bruteforce
                     char pch = Convert.ToChar(word[x]);
                     if (ch == pch)
                     {
-                        //if match
-                        Console.WriteLine("[Try] Trying: {0}", ch);
+                        // found char
+                        //color correct
+                        Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine("[Found] Found char: {0}", ch);
                         result += ch;
                         break;
                     }
                     else
                     {
-                        //if not matched
+                        //color not correct
+                        Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("[Try] Still Trying: {0}", ch);
 
                     }
 
                 }
             }
-            //result
             return result;
         }
     }
